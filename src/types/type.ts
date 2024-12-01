@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 interface Context {
-  appTitle: string | null;
+  appTitle: string;
   loggedIn: boolean;
   setLoggedIn: Dispatch<SetStateAction<boolean>> | null;
 }
