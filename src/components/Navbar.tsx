@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation } from "react-router";
 import { AppContext } from "../context/UserContext";
-import { AuthorizedRoute, DefaultRoutes, LoginRoute } from "../utility/route";
+import { AuthorizedRoute, DefaultRoute, LoginRoute } from "../utility/route";
 
 const Navbar = () => {
   const location = useLocation();
@@ -26,7 +26,7 @@ const Navbar = () => {
               </Link>
             </div>
           ))}
-        {DefaultRoutes.map((item) => (
+        {DefaultRoute.map((item) => (
           <div className="login px-4 hover:text-blue-600 transition-all duration-200">
             <Link to={item.path} state={{ from: location }}>
               {item.title}

@@ -1,6 +1,6 @@
 import { Route } from "../types/type";
 
-export const DefaultRoutes: Route[] = [
+export const DefaultRoute: Route[] = [
   {
     path: "/contact",
     title: "Contact Us",
