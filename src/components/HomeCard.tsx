@@ -1,17 +1,15 @@
 import "./HomeCard.css";
+import { ScreenContext } from "../context/WindowContext";
+import { useContext } from "react";
 const HomeCard = () => {
+  const { width }: { width: number } = useContext(ScreenContext);
+  console.log(width);
   return (
-    <div className="hero-card w-[90vw] h-[69vh] relative flex mx-auto text-gray-800 text-7xl shadow-2xl *:text-shadow-relief overflow-hidden rounded-xl">
+    <div className="hero-card h-[94vh] relative flex-container flex-col mx-auto text-gray-800 text-7xl shadow-2xl *:text-shadow-relief overflow-hidden">
       {/* <BirdAnimation /> */}
-      <div className="card-1 w-[100%] pr-4 flex items-center justify-center rounded-tl-xl rounded-bl-lg">
-        Akash P.
-      </div>
-      {/* <div className="card-1 w-[50%] text-left pl-4 flex items-center justify-start rounded-tr-xl rounded-br-lg">
-        P.
-      </div> */}
-      <div className="title absolute text-3xl bottom-[39%] right-[30%] italic">
-        Full Stack Developer
-      </div>
+      <div className="card-1">Akash P.</div>
+      <div className="title  text-3xl italic ml-[20vw]">Full Stack Developer</div>
+      {/* <div className="title  text-3xl italic ml-36">Current Width: {width}</div> */}
     </div>
   );
 };

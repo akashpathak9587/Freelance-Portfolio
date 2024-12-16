@@ -11,4 +11,8 @@
   html {
     @apply font-Primary;
   }
+
+  .flex-container{
+    @apply flex justify-center items-center;
+  }
 }
