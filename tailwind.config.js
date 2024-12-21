@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       Primary: "Poppins",
+      Title: "Open Sans"
     },
     textShadow: {
       default: "0 0 2px rgba(255,255,255,0.5)",

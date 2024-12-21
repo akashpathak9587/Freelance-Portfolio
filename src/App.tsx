@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import "./App.css";
 import { useNavigate } from "react-router";
-import HeroSection from "./components/HeroSection";
-import { AppContext } from "./context/UserContext";
+import HeroSection from "./components/HeroSection/HeroSection";
+import { AppContext } from "./context/UserContext/UserContext";
 
 function App() {
   const { loggedIn } = useContext(AppContext);

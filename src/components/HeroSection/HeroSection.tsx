@@ -1,5 +1,5 @@
-import HomeCard from "./HomeCard";
-import Navbar from "./Navbar";
+import HomeCard from "../HomeCard/HomeCard";
+import Navbar from "../Navbar/Navbar";
 
 const HeroSection = () => {
   return (
