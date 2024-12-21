@@ -3,14 +3,17 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router";
 import AppRoute from "./routes.tsx";
-import UserContext from "./context/UserContext.tsx";
+import UserContext from "./context/UserContext/UserContext.tsx";
+import WindowContext from "./context/WindowContext/WindowContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <UserContext>
-      <StrictMode>
-        <AppRoute />
-      </StrictMode>
+      <WindowContext>
+        <StrictMode>
+          <AppRoute />
+        </StrictMode>
+      </WindowContext>
     </UserContext>
   </BrowserRouter>
 );

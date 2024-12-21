@@ -1,10 +1,8 @@
-import HomeCard from "./HomeCard";
-import Navbar from "./Navbar";
+import HomeCard from "../HomeCard/HomeCard";
 
 const HeroSection = () => {
   return (
     <>
-      <Navbar />
       <HomeCard />
     </>
   );
