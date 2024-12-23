@@ -48,7 +48,6 @@ const cardData: cardDataType[] = [
     description: "Full Stack Project",
     tools: "React, Django, Postgresql, Integrated Rest APIs",
     img: wellnessUi,
-    colSize: 4,
   },
   {
     title: "Expenses Tracker",
@@ -56,7 +55,6 @@ const cardData: cardDataType[] = [
     tools:
       "React, Node, Graphql, MongoDB, JWT Authentication, Docker Implementation",
     img: expensesTrackerUI,
-    colSize: 8,
   },
   {
     title: "Food Delivery App",
@@ -64,28 +62,24 @@ const cardData: cardDataType[] = [
     tools:
       "React, Node, MongoDB, Context API, JWT Authentication, Stripe Payment Integration, Admin Panel Integration",
     img: foodDeilveryUI,
-    colSize: 8,
   },
   {
     title: "EventHub Platform",
     description: "Full Stack Project",
     tools: "React, Node, MongoDB",
     img: eventHubUI,
-    colSize: 4,
   },
   {
     title: "Barbar Shop Landing Page",
     description: "Frontend Project",
     tools: "HTML, CSS, JS",
     img: barbarImg,
-    colSize: 4,
   },
   {
     title: "Music App Landing Page",
     description: "Frontend Project",
     tools: "HTML, CSS, JS",
     img: musicAppUi,
-    colSize: 8,
   },
 ];
   

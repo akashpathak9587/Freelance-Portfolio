@@ -1,0 +1,3 @@
+.textArea{
+    @apply border border-black resize-none rounded-xl p-2;
+}

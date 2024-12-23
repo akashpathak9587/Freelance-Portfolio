@@ -19,7 +19,7 @@ const Navbar = () => {
           AuthorizedRoute.map((item) => (
             <div
               key={item.title}
-              className="login px-4 hover:text-blue-600 transition-all duration-200">
+              className="login px-4 hover:text-[#b9a1a2] transition-all duration-200">
               <Link to={item.path} state={{ from: location }}>
                 {item.title}
               </Link>
@@ -29,7 +29,7 @@ const Navbar = () => {
           LoginRoute.map((item) => (
             <div
               key={item.title}
-              className="login px-4 hover:text-blue-600 transition-all duration-200">
+              className="login px-4 hover:text-[#b9a1a2] transition-all duration-200">
               <Link to={item.path} state={{ from: location }}>
                 {item.title}
               </Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
         {DefaultRoute.map((item) => (
           <div
             key={item.title}
-            className="login px-4 hover:text-blue-600 transition-all duration-200">
+            className="login px-4 hover:text-[#b9a1a2] transition-all duration-200">
             <Link to={item.path} state={{ from: location }}>
               {item.title}
             </Link>

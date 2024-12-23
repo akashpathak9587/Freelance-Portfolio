@@ -8,7 +8,7 @@ const ProjectsCard = () => {
         {cardData.map((item) => (
           <div
             key={item.title}
-            className={`col-span-${item.colSize} ${styles.card} relative`}>
+            className={`col-span-6 ${styles.card} relative`}>
             <img src={item.img} alt="" className="object-contain w-full h-full" />
             <div
               className={`${styles.cardDetails} absolute bottom-8 -left-[100%] text-white`}>

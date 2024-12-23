@@ -16,7 +16,6 @@ interface cardDataType {
   description: string;
   tools: string;
   img: string;
-  colSize: number;
 }
 
 export type { Context, Route, cardDataType };

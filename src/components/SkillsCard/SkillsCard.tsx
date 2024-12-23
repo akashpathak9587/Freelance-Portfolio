@@ -16,8 +16,8 @@ const SkillsCard = () => {
                 {key}
               </div>
               <div className={`mt-12  h-[40vh] flex flex-col justify-between`}>
-                {value.map((v: string) => (
-                  <p>{v}</p>
+                {value.map((v: string, index: number) => (
+                  <p key={index}>{v}</p>
                 ))}
               </div>
             </div>
