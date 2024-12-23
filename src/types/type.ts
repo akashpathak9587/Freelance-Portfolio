@@ -11,4 +11,12 @@ interface Route{
   title: string;
 }
 
-export type { Context, Route };
+interface cardDataType {
+  title: string;
+  description: string;
+  tools: string;
+  img: string;
+  colSize: number;
+}
+
+export type { Context, Route, cardDataType };
