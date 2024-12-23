@@ -1,3 +1,10 @@
-.textArea{
-    @apply border border-black resize-none rounded-xl p-2;
+.textArea {
+  @apply border border-[#b9a1a2] resize-none rounded-xl p-2;
+}
+
+.textInput {
+  @apply text-[#b9a1a2];
+  &::placeholder {
+    @apply text-[#b9a1a2];
+  }
 }
