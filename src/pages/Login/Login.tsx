@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import MessageBox from "../../components/MessageBox/MessageBox";
 import Navbar from "../../components/Navbar/Navbar";
@@ -12,6 +13,7 @@ const Login = () => {
       <SkillsCard />
       <ProjectsCard />
       <MessageBox />
+      <Footer />
     </>
   );
 };

@@ -1,12 +1,22 @@
 import { skills } from "../../constants/constant";
+// import Poly from "../Poly/Poly";
 import styles from "./SkillsCard.module.css";
 const SkillsCard = () => {
   return (
     <div className="py-12">
-      <div className="text-5xl nowrap text-center p-4">My Skills</div>
+      <div className="title text-[2.5rem] tracking-widest p-12 text-5xl text-[#b9a1a2] text-center">
+        My Skills
+      </div>
 
       <div
         className={`${styles.container} h-[70vh] relative flex items-center justify-around text-gray-800 text-8xl overflow-hidden`}>
+        {/* {skills.map((skill, skillIndex) => {
+          console.log(skill);
+          return Object.entries(skill).map(([key, value]) => {
+            console.log("value", v);
+            return <Poly key={skillIndex + key} keyText={key} value={value} />;
+          });
+        })} */}
         {skills.map((skill) =>
           Object.entries(skill).map(([key, value]) => (
             <div
@@ -16,8 +26,8 @@ const SkillsCard = () => {
                 {key}
               </div>
               <div className={`mt-12  h-[40vh] flex flex-col justify-between`}>
-                {value.map((v: string, index: number) => (
-                  <p key={index}>{v}</p>
+                {value.map((v: string) => (
+                  <p>{v}</p>
                 ))}
               </div>
             </div>

@@ -3,12 +3,12 @@ import styles from "./ProtectsCard.module.css";
 const ProjectsCard = () => {
   return (
     <div className="flex flex-col gap-10">
-      <div className="text-center text-5xl p-4">My Projects</div>
+      <div className="title text-[2.5rem] tracking-widest p-12 text-5xl text-[#b9a1a2] text-center">My Projects</div>
       <div className="grid grid-cols-12 col-span-8 col-span-4 gap-4">
         {cardData.map((item) => (
           <div
             key={item.title}
-            className={`col-span-6 ${styles.card} relative`}>
+            className={`col-span-6 ${styles.card} relative shadow`}>
             <img src={item.img} alt="" className="object-contain w-full h-full" />
             <div
               className={`${styles.cardDetails} absolute bottom-8 -left-[100%] text-white`}>
