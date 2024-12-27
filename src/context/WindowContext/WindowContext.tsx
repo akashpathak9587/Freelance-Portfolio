@@ -4,8 +4,6 @@ import { createContext } from "react";
 type ScreenContextType = {
   width: number,
   isMobile: boolean,
-  inView: boolean,
-  setInView: any,
   section: string,
   setSection: any,
 }
@@ -13,8 +11,6 @@ type ScreenContextType = {
 export const ScreenContext = createContext<ScreenContextType>({
   width: window.innerWidth,
   isMobile: false,
-  inView: false,
-  setInView: undefined,
   section: "",
   setSection: undefined
 });
@@ -22,7 +18,6 @@ export const ScreenContext = createContext<ScreenContextType>({
 const WindowContext = ({ children }: { children: ReactNode }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [inView, setInView] = useState<boolean>(false);
   const [section, setSection] = useState<string>("");
   
 
@@ -36,7 +31,7 @@ const WindowContext = ({ children }: { children: ReactNode }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, [])
 
-  const contextValue = useMemo(() => ({ width, isMobile, inView, setInView, section, setSection }), [width, isMobile, inView, section]);
+  const contextValue = useMemo(() => ({ width, isMobile, section, setSection }), [width, isMobile, section]);
   return (
     <ScreenContext.Provider value={contextValue}>
       {children}
