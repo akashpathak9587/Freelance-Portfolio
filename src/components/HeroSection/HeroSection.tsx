@@ -1,5 +1,4 @@
 import HomeCard from "../HomeCard/HomeCard";
-
 const HeroSection = () => {
   return (
     <>

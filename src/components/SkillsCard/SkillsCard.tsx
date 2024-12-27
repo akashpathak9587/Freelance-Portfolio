@@ -1,8 +1,23 @@
+import { useContext, useEffect } from "react";
 import { skills } from "../../constants/constant";
 import styles from "./SkillsCard.module.css";
+import { useInView } from "react-intersection-observer";
+import { ScreenContext } from "../../context/WindowContext/WindowContext";
+
 const SkillsCard = () => {
+  const {
+    setSection,
+  } = useContext(ScreenContext);
+  const { ref, inView } = useInView({
+    threshold: 1,
+  });
+  useEffect(() => {
+    if (inView) {
+      setSection("Skills");
+    }
+  }, [inView, setSection]);
   return (
-    <div className="py-12" id="skills">
+    <div className="py-12" id="skills" ref={ref}>
       <div className="title text-[2.5rem] tracking-widest p-12 text-5xl text-[#b9a1a2] text-center">
         My Skills
       </div>

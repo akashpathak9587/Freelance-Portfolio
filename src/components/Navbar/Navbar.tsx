@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import { AllRoute, AuthorizedRoute, DefaultRoute, LoginRoute, PortfolioRoute } from "../../utility/route";
 import { ScreenContext } from "../../context/WindowContext/WindowContext";
@@ -9,7 +9,11 @@ import { HashLink } from "react-router-hash-link";
 const Navbar = () => {
   const location = useLocation();
   const { appTitle } = useContext(AppContext);
-  const { isMobile } = useContext(ScreenContext);
+  const { isMobile, section } = useContext(ScreenContext);
+
+  useEffect(() => {
+    console.log("section name", section)
+  }, [section])
   const handleNavClick = (title: string) => {
     if (title === "Home") {
       window.scrollTo({
@@ -29,7 +33,9 @@ const Navbar = () => {
         {UnauthorizedRoute.map((item) => (
           <div
             key={item.title}
-            className="login px-4 hover:text-[#333333] transition-all duration-300">
+            className={`login px-4 hover:text-[#333333] transition-all duration-300 ${
+              section === item.title ? "text-[#333333]" : ""
+            }`}>
             <Link
               to={item.path}
               state={{ from: location }}
@@ -42,7 +48,9 @@ const Navbar = () => {
         {HashRoute.map((item) => (
           <div
             key={item.title}
-            className="login px-4 hover:text-[#333333] transition-all duration-300">
+            className={`login px-4 hover:text-[#333333] transition-all duration-300 ${
+              section === item.title ? "text-[#333333]" : ""
+            }`}>
             <HashLink to={item.path} smooth>
               {item.title}
             </HashLink>
