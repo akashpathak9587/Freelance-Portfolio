@@ -2,7 +2,7 @@ import { cardData } from "../../constants/constant";
 import styles from "./ProtectsCard.module.css";
 const ProjectsCard = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10" id="project">
       <div className="title text-[2.5rem] tracking-widest p-12 text-5xl text-[#b9a1a2] text-center">My Projects</div>
       <div className="grid grid-cols-12 col-span-8 col-span-4 gap-4">
         {cardData.map((item) => (

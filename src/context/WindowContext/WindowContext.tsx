@@ -1,5 +1,10 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { ScreenContext } from "./WindowContext";
+import { createContext } from "react";
+
+export const ScreenContext = createContext<{ width: number, isMobile: boolean }>({
+  width: window.innerWidth,
+  isMobile: false,
+});
 
 const WindowContext = ({ children }: { children: ReactNode }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);

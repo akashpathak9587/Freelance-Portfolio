@@ -1,22 +1,21 @@
-import { useContext, useEffect } from "react";
 import "./App.css";
-import { useNavigate } from "react-router";
-import HeroSection from "./components/HeroSection/HeroSection";
-import { AppContext } from "./context/UserContext/UserContext";
-
-function App() {
-  const { loggedIn } = useContext(AppContext);
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!loggedIn) {
-      navigate("/login");
-    }
-  }, []);
-
+import { BrowserRouter } from "react-router-dom";
+import AppRoute from "./routes";
+import UserContext from "./context/UserContext/UserContext";
+import WindowContext from "./context/WindowContext/WindowContext";
+import { StrictMode } from "react";
+const App = () => {
   return (
-   <HeroSection/>
-  )
-}
+    <BrowserRouter>
+      <UserContext>
+        <WindowContext>
+          <StrictMode>
+            <AppRoute />
+          </StrictMode>
+        </WindowContext>
+      </UserContext>
+    </BrowserRouter>
+  );
+};
 
 export default App;

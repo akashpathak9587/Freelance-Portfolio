@@ -1,6 +1,8 @@
-import { ReactNode, useEffect, useMemo, useState } from "react";
-import { AppContext } from "./UserContext";
+import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
+import { Context } from "../../types/type";
 import { DefaultContext } from "../../utility/context";
+
+export const AppContext = createContext<Context>(DefaultContext);
 
 const UserContext = ({ children }: { children: ReactNode }) => {
   const [appTitle, setAppTitle] = useState<string>("");

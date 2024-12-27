@@ -1,4 +1,4 @@
-import App from "./App";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import { RouteComponentProps } from "./types/Props";
@@ -6,11 +6,9 @@ import { RouteComponentProps } from "./types/Props";
 const RouteComponent = ({ path }:RouteComponentProps) => {
   switch (path) {
     case "/":
-      return <App />;
-      break;
+      return <Home />;
     case "/login":
       return <Login />;
-      break;
     default:
       return <PageNotFound />;
   }
