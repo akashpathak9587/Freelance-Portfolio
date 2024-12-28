@@ -26,4 +26,13 @@
   .title {
     @apply font-Title;
   }
+
+  ::selection{
+    color: #bac3c3;
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
 }

@@ -2,9 +2,10 @@ import { useContext, useEffect } from "react";
 import { ScreenContext } from "../../context/WindowContext/WindowContext";
 import LinkedInBadge from "../LinkedInBadge/LinkedInBadge";
 import { useInView } from "react-intersection-observer";
+import FloatingAnimationWrapper from "../FloatingAnimationWrapper/FloatingAnimationWrapper";
 
 const Footer = () => {
-  const {setSection} = useContext(ScreenContext);
+  const { setSection } = useContext(ScreenContext);
   const { ref, inView } = useInView({
     threshold: 1,
   });
@@ -15,7 +16,11 @@ const Footer = () => {
   }, [inView, setSection]);
   return (
     <div className="flex flex-col" id="about" ref={ref}>
-      <div className="title text-[2.5rem] tracking-widest text-5xl text-[#b9a1a2] text-center">About Me</div>
+      <FloatingAnimationWrapper>
+        <div className="title text-[2.5rem] tracking-widest text-5xl text-[#b9a1a2] text-center">
+          About Me
+        </div>
+      </FloatingAnimationWrapper>
       <div className={`h-[40vh] flex items-center justify-center gap-24`}>
         <div className="profile-info leading-9 text-center">
           <div>
