@@ -1,7 +1,5 @@
 import {
-  Dispatch,
   ReactNode,
-  SetStateAction,
   useEffect,
   useMemo,
   useState,
@@ -12,14 +10,14 @@ type ScreenContextType = {
   width: number;
   isMobile: boolean;
   section: string;
-  setSection: Dispatch<SetStateAction<string>> | null;
+  setSection: any;
 };
 
 export const ScreenContext = createContext<ScreenContextType>({
   width: window.innerWidth,
   isMobile: false,
   section: "",
-  setSection: null,
+  setSection: undefined,
 });
 
 const WindowContext = ({ children }: { children: ReactNode }) => {
