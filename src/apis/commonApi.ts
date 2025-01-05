@@ -15,5 +15,5 @@ export const commonApi = axios.create({
 
 export const sendMail = async (body: mailBody) => {
   const response = await commonApi.post("/send-email", body);
-  return response.data;
+  return response;
 };

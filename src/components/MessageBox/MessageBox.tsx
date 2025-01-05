@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ScreenContext } from "../../context/WindowContext/WindowContext";
 import styles from "./MessageBox.module.css";
 import { useInView } from "react-intersection-observer";
@@ -6,12 +6,16 @@ import FloatingAnimationWrapper from "../FloatingAnimationWrapper/FloatingAnimat
 import { SubmitHandler, useForm } from "react-hook-form";
 import { mailBody } from "../../types/api";
 import { sendMail } from "../../apis/commonApi";
+import { BeatLoader } from "react-spinners";
+import { ToastContainer } from "react-toastify";
+import { notifyError, notifySendMail } from "../../utility/commonFunctions";
 
 const MessageBox = () => {
   const { setSection } = useContext(ScreenContext);
   const { ref, inView } = useInView({
     threshold: 1,
   });
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (inView) {
       setSection("Contact Me");
@@ -22,11 +26,26 @@ const MessageBox = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<mailBody>();
 
-  const onSubmit: SubmitHandler<mailBody> = (data) => {
-    console.log(data);
-    sendMail(data);
+  const onSubmit: SubmitHandler<mailBody> = async (data) => {
+    setLoading(true);
+    try {
+      const res = await sendMail(data);
+      if (res.status === 200) {
+        notifySendMail();
+        setLoading(false);
+        reset();
+      } else {
+        notifyError();
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+      notifyError();
+      setLoading(false);
+    }
   };
   return (
     <div
@@ -110,12 +129,17 @@ const MessageBox = () => {
             </div>
           )}
         </div>
-        <button
-          type="submit"
-          className="bg-[#b9a1a2] hover:bg-[#c8aeaf] py-2 px-12 text-white rounded-sm transition-all duration-300">
-          Connect
-        </button>
+        {loading ? (
+          <BeatLoader size={12} />
+        ) : (
+          <button
+            type="submit"
+            className="bg-[#b9a1a2] hover:bg-[#c8aeaf] py-2 px-12 text-white rounded-sm transition-all duration-300">
+            Connect
+          </button>
+        )}
       </form>
+      <ToastContainer />
     </div>
   );
 };
