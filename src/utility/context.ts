@@ -1,7 +1,7 @@
 import { Context } from "../types/type";
 
 export const DefaultContext: Context = {
-  appTitle: "Demo",
+  appTitle: "Akash P.",
   loggedIn: false,
   setLoggedIn: null,
 };

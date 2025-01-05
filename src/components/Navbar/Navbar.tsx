@@ -24,7 +24,7 @@ const Navbar = () => {
   };
   return (
     <div
-      className={` fixed top-0 left-0 right-0 z-10 navbar-container flex-container justify-around p-4 bg-[#bda6a6] ${
+      className={` fixed top-0 left-0 right-0 z-[9999] navbar-container flex-container justify-around p-4 bg-[#bda6a6] ${
         isMobile &&
         "flex-col justify-center items-center gap-[18px] whitespace-nowrap text-[3vmin]"
       }`}>

@@ -15,7 +15,7 @@
 
 .cardDetails{
     @apply w-11/12 overflow-hidden bg-[rgba(0,0,0,0.5)] p-4;
-    z-index: 999;
+    z-index: 2222;
     transition: all 0.3s;
     border-radius: 4px;
 }
@@ -36,6 +36,6 @@ img{
     left: 0;
     background-color: rgba(0,0,0,0);
     position: absolute;
-    z-index: 99;
+    z-index: 1111;
     transition: all 0.3s;
 }
