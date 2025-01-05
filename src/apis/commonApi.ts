@@ -2,7 +2,7 @@ import axios from "axios";
 import { mailBody } from "../types/api";
 
 export const commonApi = axios.create({
-  baseURL: "http://localhost:3000/v1",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
