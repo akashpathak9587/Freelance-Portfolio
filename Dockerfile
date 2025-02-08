@@ -1,5 +1,5 @@
 FROM node:lts-alpine as builder
-ENV VITE_API_BASE_URL=http://localhost:3001/v1/
+ENV VITE_API_BASE_URL=https://react-send-email.onrender.com/v1/
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --silent && mv node_modules ../
